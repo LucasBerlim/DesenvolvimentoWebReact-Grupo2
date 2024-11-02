@@ -1,0 +1,66 @@
+.navHeader{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #F8F5F1;
+    justify-content: space-between;
+    align-items: center;
+    color: #B55040;
+    height: 7rem;
+    padding: 1rem;
+    border-bottom: #B55040 solid 1px;
+}
+
+#logoImg img{
+    height: 6rem;
+}
+
+.menuNav ul{
+    display: flex;
+    list-style: none;
+    gap: 5rem;
+}
+
+#login{
+    display: flex;    
+    gap: 0.3rem;
+}
+
+.loginImg{
+    display: flex;
+    border-radius: 3rem;
+    border:#B55040 2px solid;
+    height: 3rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#login img{
+    height: 2rem;
+    margin-bottom: 5px;
+}
+
+.linkMenu, .linkLogin{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: none;
+    color: #B55040;
+    text-decoration: underline;
+    background-color: #F8F5F1;
+}
+
+.linkMenu:hover, .linkLogin:hover{
+    color: #CF683B;
+    font-weight: 600;
+}
+
+.linkMenu{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.linkLogin{
+    font-size: 1rem;
+    cursor: pointer;
+}
