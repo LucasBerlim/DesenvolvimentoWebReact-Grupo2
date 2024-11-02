@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { NotFoundPage } from "../pages/notFound/NotFound";
 import { ProdutoPage } from "../pages/produto/Produto";
+import { Layout } from "../Layout/Layout";
 
 export function Rotas() {
     return(
         <>
             <Routes>
-                <Route>
+                <Route path="/" element={<Layout/>}>
                     <Route index element={<ProdutoPage/>} />
                     {/*<Route path="sobre" element={<SobrePage />} />*/}
                     {/*<Route path="carrinho" element={<CarrinhoPage />} />*/}
