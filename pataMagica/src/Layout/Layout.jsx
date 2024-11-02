@@ -9,8 +9,7 @@ export function Layout() {
                 <Outlet/>
             </main>
 
-            <Footer></Footer>
+            <Footer/>
         </>
-        
     )
 }
