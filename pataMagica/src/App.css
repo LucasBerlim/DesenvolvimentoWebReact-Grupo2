@@ -8,4 +8,6 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-image: url("src/assets/1.svg");
+    background-size: calc(25%);
   }
