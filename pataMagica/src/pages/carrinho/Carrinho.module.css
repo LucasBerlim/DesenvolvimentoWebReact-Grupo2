@@ -1,14 +1,16 @@
 .container {
+    margin: 4rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
     border: #B55040 solid 1px;
     background-color: #F8F5F1;
     border-radius: 3rem;
     padding: 3.5rem;
     width: 50vw;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
+    position: relative;
 }
 
 .carrinhoTitulo {
@@ -16,6 +18,7 @@
     color: #B55040;
     font-size: 2.5rem;
     font-weight: bold;
+    font-family: "Poppins", sans-serif;
 }
 
 .container ul {
@@ -39,18 +42,22 @@ li p {
     color: #333;
 }
 
-button {
+.container button {
     margin-left: 10px;
-    padding: 5px 10px;
+    font-family: "Poppins", sans-serif;
+    padding: 1rem;
     background-color: #B55040;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #a14138;
+.container button:hover {
+    background-color: #CF683B;
+    transform: scale(1.05);
+
 }
 
 h2 {
