@@ -5,7 +5,7 @@ export function SobrePage() {
     const handleClick = (endereco) => window.location.assign(endereco)
     return (
         <>
-        <div className={styles.sobre}><p>Sobre</p></div>
+        <div className={styles.sobre}><p>Sobre nós</p></div>
         <div className={styles.container}>
               
                 <Cards
