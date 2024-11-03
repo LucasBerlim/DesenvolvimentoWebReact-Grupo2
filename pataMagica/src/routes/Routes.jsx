@@ -13,10 +13,10 @@ export function Rotas() {
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<ProdutoPage/>} />
-                    <Route path="teste" element={<TesteProdutosPage/>} />
-                    <Route path="cadastro" element={<Cadastro/>} />
-                    <Route path="sobre" element={<SobrePage/>} />
-                    <Route path="carrinho" element={<CarrinhoPage/>} />
+                    <Route path="/teste" element={<TesteProdutosPage/>} />
+                    <Route path="/cadastro" element={<Cadastro/>} />
+                    <Route path="/sobre" element={<SobrePage/>} />
+                    <Route path="/carrinho" element={<CarrinhoPage/>} />
                     {/*<Route path="login" element={<LoginPage />} />*/}
                     {/*<Route path="cadastro" element={<CadastroPage />} />*/}
                 </Route>

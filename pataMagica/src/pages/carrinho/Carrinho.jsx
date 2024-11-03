@@ -7,7 +7,8 @@ export function CarrinhoPage() {
     itensCarrinho,
     valorTotal,
     adicionarItens,
-    removerItem,
+    removerItens,
+    removerUmItem,
     limparCarrinho,
     calcularValorTotal,
   } = useContext(carrinhoContext);
@@ -23,12 +24,13 @@ export function CarrinhoPage() {
         {itensCarrinho.map((item) => (
           <li className={styles.carrinhoItens} key={item.id}>
             <p>
-              {item.nome} - {item.quantidade} x R${item.preco}
+              {item.nome} - {item.quantidade} x R${item.valorUnitario}
             </p>
             <button onClick={() => adicionarItens(item)}>
               Adicionar Itens
             </button>
-            <button onClick={() => removerItem(item.id)}>Remover</button>
+            <button onClick={() => removerUmItem(item.id)}>Remover</button>
+            <button onClick={() => removerItens(item.id)}>Remover Todos</button>
           </li>
         ))}
       </ul>
