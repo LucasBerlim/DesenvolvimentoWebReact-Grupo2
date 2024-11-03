@@ -1,39 +1,38 @@
-import styles from './Footer.module.css'
-import { useNavigate } from "react-router-dom"
+import styles from "./Footer.module.css";
+import { useNavigate } from "react-router-dom";
 
 export function Footer() {
+  const navigate = useNavigate();
+  const handleNavigation = (link) => {
+    navigate("/" + link);
+  };
 
-    const navigate = useNavigate();
-    const handleNavigation = (link) => {
-        navigate("/" + link);
-    }
-
-    const linkedin = [
-        {
-            nome: 'Lucas Berlim',
-            link: 'https://www.linkedin.com/in/lucas-berlim-705136265/'
-        },
-        {
-            nome: 'Fernanda Canto',
-            link: 'https://www.linkedin.com/in/fernanda-canto/'
-        },
-        {
-            nome: 'Michele Silva',
-            link: 'https://www.linkedin.com/in/michelemoreira-s/'
-        },
-        {
-            nome: 'Renan Ferreira',
-            link: '#'
-        },
-        {
-            nome: 'Brenda Barbatti',
-            link: 'https://www.linkedin.com/in/brenda-chaves-barbatti-947a91168/'
-        },
-        {
-            nome: 'Eduarda Pinho',
-            link: 'https://www.linkedin.com/in/eduarda-pinho-064b44330/'
-        }
-    ]
+  const linkedin = [
+    {
+      nome: "Lucas Berlim",
+      link: "https://www.linkedin.com/in/lucas-berlim-705136265/",
+    },
+    {
+      nome: "Fernanda Canto",
+      link: "https://www.linkedin.com/in/fernanda-canto/",
+    },
+    {
+      nome: "Michele Moreira",
+      link: "https://www.linkedin.com/in/michelemoreira-s/",
+    },
+    {
+      nome: "Renan Ferreira",
+      link: "#",
+    },
+    {
+      nome: "Brenda Barbatti",
+      link: "https://www.linkedin.com/in/brenda-chaves-barbatti-947a91168/",
+    },
+    {
+      nome: "Eduarda Pinho",
+      link: "https://www.linkedin.com/in/eduarda-pinho-064b44330/",
+    },
+  ];
 
     return (
         <div className={styles.container}>
