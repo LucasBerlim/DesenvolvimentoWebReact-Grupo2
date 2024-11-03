@@ -36,15 +36,10 @@ export function TesteProdutosPage() {
                         imgDesc= {product.nome}
                         titulo= {product.nome}
                         descricao={product.descricao}
-                        preco={product.valorUnitario}
+                        preco={`R$${product.valorUnitario}`}
+                        nomeBotao={"Adicionar ao carrinho"}
                     />
                 ))}
-                <Cards
-                imagem= {"src/assets/realistic_pet_toys.png"}
-                imgDesc= {"brinquedos fofos"}
-                titulo= {"Brinquedos"}
-                descricao={"Brinquedos variados para seu pet"}
-                preco={"49,00"} />
             </div>
         </>
     );
