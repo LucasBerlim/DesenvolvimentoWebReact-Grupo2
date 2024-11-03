@@ -1,6 +1,12 @@
 import styles from './Footer.module.css'
+import { useNavigate } from "react-router-dom"
 
 export function Footer() {
+
+    const navigate = useNavigate();
+    const handleNavigation = (link) => {
+        navigate("/" + link);
+    }
 
     const linkedin = [
         {
@@ -38,8 +44,8 @@ export function Footer() {
                 <p>Email: contato@lojavirtual.com</p>
             </div>
             <div className={styles.info}>
-                <button>Home</button>
-                <button>Sobre</button>
+                <button onClick={()=>handleNavigation('home')}>Home</button>
+                <button onClick={()=>handleNavigation('sobre')}>Sobre</button>
             </div>
             <div>
                 <ul>
