@@ -3,6 +3,8 @@ import { createContext } from "react";
 
 const carrinhoContext = createContext();
 
+const listaItensCarrinho = [];
+
 const CarrinhoProvider = (props) => {
   const [itensCarrinho, setItensCarrinho] = useState(listaItensCarrinho);
   const [valorTotal, setValorTotal] = useState(0);

@@ -2,6 +2,7 @@ import styles from './Teste.module.css'
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Cards } from '../../components/Cards/Cards'
+import { carrinhoContext } from '../../context/carrinhoContext';
 /*import { api } from "../../services/api"*/
 
 export function TesteProdutosPage() {
@@ -31,13 +32,15 @@ export function TesteProdutosPage() {
             <div className={styles.produtos}><p>Produtos</p></div>
             <div className={styles.container}>
                 {products.map((product) => (
-                    <Cards
+                    <Cards 
+                        key={product.id}
                         imagem= {product.imagem}
                         imgDesc= {product.nome}
                         titulo= {product.nome}
                         descricao={product.descricao}
                         preco={`R$${product.valorUnitario}`}
                         nomeBotao={"Adicionar ao carrinho"}
+                        handleClick={() => adicionarItens(product)}
                     />
                 ))}
             </div>
