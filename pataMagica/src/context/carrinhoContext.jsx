@@ -1,52 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 
-const carrinhoContext = createContext();
+export const carrinhoContext = createContext();
 
-const listaItensCarrinho = [];
+export const CarrinhoProvider = (props) => {
+  const [itensCarrinho, setItensCarrinho] = useState(() => {
+    const itensLocais = localStorage.getItem('itensCarrinho');
+    return itensLocais ? JSON.parse(itensLocais) : [];
+  });
 
-const CarrinhoProvider = (props) => {
-  const [itensCarrinho, setItensCarrinho] = useState(listaItensCarrinho);
   const [valorTotal, setValorTotal] = useState(0);
 
-  function adicionarItens(novoItem) {
+  const adicionarItens = (novoItem) => {
     const produtoExistente = itensCarrinho.find(
-      (produto) => produto.id === novoProduto.id
-    );
+      produto => produto.id === novoItem.id);
 
-    var novosItens;
+    let novosItens;
 
     if (produtoExistente) {
-      novoItem = itensCarrinho.map((item) => {
-        if (item.id === novoProduto.id) {
-          return { ...item, quantidade: item.quantidade + 1 };
+      novosItens = itensCarrinho.map(item => 
+        item.id === novoItem.id ? { ...item, quantidade: item.quantidade + 1} : item);          
+        } else {
+          novosItens = [...itensCarrinho, { ...novoItem, quantidade: 1}];
         }
-        return item;
-      });
-    } else {
-      novosItens = [...itensCarrinho, { ...novoProduto, quantidade: 1 }];
+        setItensCarrinho(novosItens);
+
+      };
+    
+    const removerItens = (id) => {
+      const novosItens = itensCarrinho.filter(item => item.id !== id);
+      setItensCarrinho(novosItens);
     }
 
-    setItensCarrinho(novosItens);
-  }
+    const removerUmItem = (id) => {
+      const novosItens = itensCarrinho.map(item => 
+        item.id === id && item.quantidade >1 ? { ... item, quantidade: item.quantidade -1} : item)
+        .filter(item => item.quantidade > 0);
+        setItensCarrinho(novosItens);
+    }
 
-  function removerItem(id) {
-    const novoItem = itensCarrinho.filter((item) => item.id === id);
-    setItensCarrinho(novoItem);
-  }
+    const limparCarrinho = () => {
+      setItensCarrinho([]);
+      setValorTotal(0);
+    }    
 
-  function limparCarrinho() {
-    setItensCarrinho([]);
-  }
+    const calcularValorTotal = () => {
+      const total = itensCarrinho.reduce((valorAtual, item) => valorAtual + item.quantidade * item.valorUnitario, 0);      
+      setValorTotal(total);
+    };
 
-  function calcularValorTotal() {
-    let total = 0;
-    itensCarrinho.forEach((item) => {
-      total += item.quantidade * item.preco;
-    });
-
-    setValorTotal(total);
-  }
+    useEffect(() => {
+      calcularValorTotal();
+      localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+    }, [itensCarrinho]);
 
   return (
     <carrinhoContext.Provider
@@ -54,7 +60,8 @@ const CarrinhoProvider = (props) => {
         itensCarrinho,
         valorTotal,
         adicionarItens,
-        removerItem,
+        removerItens,
+        removerUmItem,
         limparCarrinho,
         calcularValorTotal,
       }}
@@ -63,5 +70,3 @@ const CarrinhoProvider = (props) => {
     </carrinhoContext.Provider>
   );
 };
-
-export { carrinhoContext, CarrinhoProvider };
