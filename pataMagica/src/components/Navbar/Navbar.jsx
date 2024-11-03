@@ -26,7 +26,7 @@ export function Navbar(){
                 <div className={styles.loginImg}>
                     <img src={login} alt="icone login" />
                 </div>
-                <button className={styles.linkLogin} onClick={()=>handleNavigation('login')}>Login</button>
+                <button className={styles.linkLogin} onClick={()=>handleNavigation('cadastro')}>Login</button>
             </div>
         </header>
         </>

@@ -9,9 +9,9 @@ export function Layout() {
             <main>
                 <Navbar/>
                 <Outlet/>
+                <Footer/>
             </main>
 
-            <Footer/>
         </>
     )
 }

@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    gap:2rem;
+    border: #B55040 solid 1px;
+    background-color: #F8F5F1;
+    border-radius: 3rem;
+    padding: 3.5rem;
+    width: 80vw;
+}
+
+.cadastroTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F8F5F1 ;
+    background-color: #B55040;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.divNome{
+    width: 100%;
+}
+
+.divNome input{
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
