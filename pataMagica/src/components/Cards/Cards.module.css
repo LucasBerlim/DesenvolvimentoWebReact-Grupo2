@@ -8,11 +8,13 @@
     color: #B55040;
     background-color: #F8F5F1;
     width: 30%;
+    box-shadow: 2px 2px 4px gray;
 }
 
 .cardImg{
     padding: 1rem 1rem 0 1rem;
-    height: 50vh;
+    height: fit-content;
+    max-height: fit-content;
 }
 
 .cardImg img{
@@ -33,12 +35,19 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    margin-top: auto;
 }
 
 .cardBotao{
     background-color: #B55040;
     color: #F8F5F1;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 1rem;
     border: none;
+    box-shadow: 2px 2px 4px gray;
+}
+
+.cardBotao:hover{
+    background-color: #CF683B;
+    font-weight: 600;
 }
