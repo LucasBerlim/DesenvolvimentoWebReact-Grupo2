@@ -26,16 +26,14 @@ export function CarrinhoPage() {
             <p>
               {item.nome} - {item.quantidade} x R${item.valorUnitario}
             </p>
-            <button onClick={() => adicionarItens(item)}>
-              Adicionar Itens
-            </button>
-            <button onClick={() => removerUmItem(item.id)}>Remover</button>
-            <button onClick={() => removerItens(item.id)}>Remover Todos</button>
+            <button onClick={() => adicionarItens(item)}>+</button>
+            <button onClick={() => removerUmItem(item.id)}>-</button>
+            <button onClick={() => removerItens(item.id)}>X</button>
           </li>
         ))}
       </ul>
       <h2>Valor Total: R${valorTotal}</h2>
-      <button onClick={limparCarrinho}>Limpar Carrinho</button>
+      <button onClick={limparCarrinho}>Limpar</button>
     </div>
   );
 }
