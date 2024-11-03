@@ -1,21 +1,29 @@
 .container {
-    margin: 4rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    margin: 2rem 4rem 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem;
     border: #B55040 solid 1px;
     background-color: #F8F5F1;
-    border-radius: 3rem;
-    padding: 3.5rem;
-    width: 50vw;
-    font-family: "Poppins", sans-serif;
+    border-radius: 3rem 3rem;
+    padding: 2.5rem;
     position: relative;
+    top: 4rem;
+    padding-bottom: 4rem;
+    width: 50%;
+
 }
 
 .carrinhoTitulo {
     text-align: center;
+    justify-content: center;
+    align-items: center;
     color: #B55040;
+    margin: 2rem 2rem 4rem;
+    font-weight: 700;
     font-size: 2.5rem;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
@@ -34,6 +42,7 @@
     border-bottom: 1px solid #B55040;
     padding: 10px 0;
     width: 100%;
+
 }
 
 li p {
@@ -65,9 +74,10 @@ h2 {
     color: #B55040;
     margin-top: 20px;
     width: 100%;
+    font-family: "Poppins", sans-serif;
 }
 
-button#clear {
+/* button#clear {
     display: block;
     margin: 20px auto 0;
     padding: 10px 20px;
@@ -80,4 +90,4 @@ button#clear {
 
 button#clear:hover {
     background-color: #a14138;
-}
+} */
