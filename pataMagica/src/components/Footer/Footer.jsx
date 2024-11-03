@@ -44,7 +44,7 @@ export function Footer() {
                 <p>Email: contato@lojavirtual.com</p>
             </div>
             <div className={styles.info}>
-                <button onClick={()=>handleNavigation('home')}>Home</button>
+                <button onClick={()=>handleNavigation('/')}>Home</button>
                 <button onClick={()=>handleNavigation('sobre')}>Sobre</button>
             </div>
             <div>
