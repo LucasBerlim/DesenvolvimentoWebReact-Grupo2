@@ -48,117 +48,122 @@ export function Cadastro(){
         <>
             <div className={styles.cadastroTitulo}><p>Cadastro</p></div>
             <div className={styles.container}>
-                    <div className={styles.content}>
+                <div className={styles.content}>
+                    <div className={styles.divNome}>
+                        <Label
+                        label={"Nome completo:"}
+                        tagInput={"nome"}/>
+                        <Input
+                        type={"text"} 
+                        placeholder={"Insira seu nome e sobrenome"} 
+                        value={nome} 
+                        onChange={(e) => setNome(e.target.value)}
+                        tagInput={"nome"}/>
+                    </div>
 
-                <div className={styles.divNome}>
-                <Label
-                label={"Nome completo:"}
-                tagInput={"nome"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira seu nome e sobrenome"} 
-                value={nome} 
-                onChange={(e) => setNome(e.target.value)}
-                tagInput={"nome"}/>
-                </div>
+                    <div className={styles.divEmail}>
+                        <Label
+                        label={"Email:"}
+                        tagInput={"email"}/>
+                        <Input
+                        type={"email"} 
+                        placeholder={"Insira seu email"} 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+                        tagInput={"email"}/>
 
-                <div className={styles.divEmail}>
-                <Label
-                label={"Email:"}
-                tagInput={"email"}/>
-                <Input
-                type={"email"} 
-                placeholder={"Insira seu email"} 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)}
-                tagInput={"email"}/>
+                        <Label
+                        label={"CPF:"}
+                        tagInput={"cpf"}/>
+                        <Input
+                        type={"text"} 
+                        placeholder={"Insira seu CPF"} 
+                        value={cpf} 
+                        onChange={(e) => setCpf(e.target.value)}
+                        tagInput={"cpf"}/>
 
-                <Label
-                label={"CPF:"}
-                tagInput={"cpf"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira seu CPF"} 
-                value={cpf} 
-                onChange={(e) => setCpf(e.target.value)}
-                tagInput={"cpf"}/>
-                </div>
+                        <Label
+                        label={"Cep:"}
+                        tagInput={"cep"}/>
+                        <Input
+                        type={"text"} 
+                        placeholder={"Insira seu CEP"} 
+                        value={cep} 
+                        onChange={(e) => setCep(e.target.value)}
+                        tagInput={"cep"}/>
+                    </div>
 
-                <div className={styles.divCep}>
-                <Label
-                label={"Cep:"}
-                tagInput={"cep"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira seu CEP"} 
-                value={cep} 
-                onChange={(e) => setCep(e.target.value)}
-                tagInput={"cep"}/>
+                    <div className={styles.divEndereco}>
+                        <div className={styles.endereco}>
+                            <Label
+                            label={"Endereço:"}
+                            tagInput={"endereco"}/>
+                            <Input
+                            tagInput={"endereco"}
+                            type={"text"} 
+                            placeholder={"Insira seu endereço"} 
+                            value={cep} 
+                            onChange={(e) => setCep(e.target.value)}/>
+                        </div>
+                        <div className={styles.numero}>
+                            <Label
+                            label={"Nº:"}
+                            tagInput={"numero"}/>
+                            <Input
+                            type={"text"} 
+                            placeholder={"Insira o numero"} 
+                            value={numero} 
+                            onChange={(e) => setNumero(e.target.value)}
+                            tagInput={"numero"}/>
+                        </div>
+                    </div>
 
-                <Label
-                label={"Endereço:"}
-                tagInput={"endereco"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira seu endereço"} 
-                value={cep} 
-                onChange={(e) => setCep(e.target.value)}
-                tagInput={"endereco"}/>
-                </div>
-                <div>
+                    <div className={styles.divTelefone}>
+                        <Label
+                        label={"Complemento:"}
+                        tagInput={"complemento"}/>
+                        <Input
+                        type={"text"} 
+                        placeholder={"Insira o complemento"} 
+                        value={complemento} 
+                        onChange={(e) => setComplemento(e.target.value)}
+                        tagInput={"complemento"}/>
 
-                <Label
-                label={"Nº:"}
-                tagInput={"numero"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira o numero"} 
-                value={numero} 
-                onChange={(e) => setNumero(e.target.value)}
-                tagInput={"numero"}/>
+                        <Label
+                        label={"Telefone:"}
+                        tagInput={"telefone"}/>
+                        <Input
+                        type={"text"} 
+                        placeholder={"Insira seu telefone"} 
+                        value={telefone} 
+                        onChange={(e) => setTelefone(e.target.value)}
+                        tagInput={"telefone"}/>
+                    </div>
 
-                <Label
-                label={"Complemento:"}
-                tagInput={"complemento"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira o complemento"} 
-                value={complemento} 
-                onChange={(e) => setComplemento(e.target.value)}
-                tagInput={"complemento"}/>
-                </div>
+                    <div className={styles.divSenha}>
+                        <Label
+                        label={"Senha:"}
+                        tagInput={"senha"}/>
+                        <Input
+                        type={"password"} 
+                        placeholder={"Insira sua senha"} 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+                        tagInput={"senha"}/>
 
-                <Label
-                label={"Telefone:"}
-                tagInput={"telefone"}/>
-                <Input
-                type={"text"} 
-                placeholder={"Insira seu telefone"} 
-                value={telefone} 
-                onChange={(e) => setTelefone(e.target.value)}
-                tagInput={"telefone"}/>
-
-                <Label
-                label={"Senha:"}
-                tagInput={"senha"}/>
-                <Input
-                type={"password"} 
-                placeholder={"Insira sua senha"} 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)}
-                tagInput={"senha"}/>
-
-                <Label
-                label={"Confirme a sua senha:"}
-                tagInput={"confirmacao"}/>
-                <Input
-                type={"passwrod"} 
-                placeholder={"Repita sua senha"} 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)}
-                tagInput={"confirmacao"}/>                
-
-                <button onClick={() => saveCliente(cliente)}>cadastrar</button>
+                        <Label
+                        label={"Confirme a sua senha:"}
+                        tagInput={"confirmacao"}/>
+                        <Input
+                        type={"password"} 
+                        placeholder={"Repita sua senha"} 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+                        tagInput={"confirmacao"}/>                
+                    </div>
+                    <div className={styles.divBotao}>
+                        <button onClick={() => saveCliente(cliente)}>Cadastrar</button>
+                    </div>
                 </div>
             </div>
             

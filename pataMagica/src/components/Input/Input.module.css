@@ -1,8 +1,17 @@
 input{
-    width: 20rem;
     border-radius: 0.4rem;
     padding: 0.5rem;
     border-color: #B55040;
     background-color: #F8F5F1;
+}
+
+input:focus {
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    border: 2px solid #CF683B;
+    background-color: #f9ecdb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: all 0.3s ease;
 }
 
