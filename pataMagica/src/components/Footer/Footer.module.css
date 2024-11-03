@@ -45,6 +45,8 @@
     align-items: center;
     text-decoration: none;
     padding: 4px 1rem;
+    min-width: 205px;
+    box-sizing: border-box;
 }
 
 .container div ul li a:hover{
