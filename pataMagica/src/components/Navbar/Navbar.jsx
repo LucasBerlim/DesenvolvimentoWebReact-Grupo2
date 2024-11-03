@@ -18,7 +18,7 @@ export function Navbar(){
             </div>
             <div className={styles.menuNav}>
                 <ul>
-                    <li><button className={styles.linkMenu} onClick={()=>handleNavigation('home')}>Home</button></li>
+                    <li><button className={styles.linkMenu} onClick={()=>handleNavigation('')}>Home</button></li>
                     <li><button className={styles.linkMenu} onClick={()=>handleNavigation('sobre')}>Sobre</button></li>                    
                 </ul>
             </div>
