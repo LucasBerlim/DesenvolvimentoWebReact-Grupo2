@@ -35,7 +35,7 @@ export function Footer() {
   ];
 
     return (
-        <div className={styles.container}>
+        <footer className={styles.container}>
             <div className={styles.info}>
                 <p>Pata Mágica - All rights reserved</p>
                 <p>Endereço: Rua Exemplo, 123</p>
@@ -58,6 +58,6 @@ export function Footer() {
                     ))}
                 </ul>
             </div>
-        </div>
+        </footer>
     )
 }
