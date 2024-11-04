@@ -6,6 +6,7 @@ import { TesteProdutosPage } from "../pages/testeProdutos/Teste";
 import { SobrePage } from "../pages/sobre/Sobre";
 import { Cadastro } from "../pages/Cadastro/Cadastro";
 import { CarrinhoPage } from "../pages/carrinho/Carrinho";
+import { LoginPage } from "../pages/login/Login";
 
 export function Rotas() {
     return(
@@ -17,7 +18,7 @@ export function Rotas() {
                     <Route path="/cadastro" element={<Cadastro/>} />
                     <Route path="/sobre" element={<SobrePage/>} />
                     <Route path="/carrinho" element={<CarrinhoPage/>} />
-                    {/*<Route path="login" element={<LoginPage />} />*/}
+                    <Route path="/login" element={<LoginPage/>} />
                     {/*<Route path="cadastro" element={<CadastroPage />} />*/}
                 </Route>
                 <Route path="*" element={<NotFoundPage/>} />
