@@ -17,6 +17,7 @@
     font-weight: bold;
     font-family: "Poppins", sans-serif;
     border: none;
+    cursor: pointer;
 }
 
 .notFoundButton:hover{
