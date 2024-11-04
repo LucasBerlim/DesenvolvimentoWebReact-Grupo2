@@ -59,6 +59,14 @@ export function Cadastro(){
                         value={nome} 
                         onChange={(e) => setNome(e.target.value)}
                         tagInput={"nome"}/>
+                        <Label
+                        label={"Data de nascimento:"}
+                        tagInput={"nome"}/>
+                        <Input
+                        type={"date"}
+                        value={dataNascimento} 
+                        onChange={(e) => setDataNascimento(e.target.value)}
+                        tagInput={"dataNascimento"}/>
                     </div>
 
                     <div className={styles.divEmail}>
