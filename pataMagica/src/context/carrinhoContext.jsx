@@ -10,6 +10,7 @@ export const CarrinhoProvider = (props) => {
   });
 
   const [valorTotal, setValorTotal] = useState(0);
+  const [contador, setContador] = useState(0);
 
   const adicionarItens = (novoItem) => {
     const produtoExistente = itensCarrinho.find(
@@ -54,16 +55,28 @@ export const CarrinhoProvider = (props) => {
       localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
     }, [itensCarrinho]);
 
+    const contadorCarrinho = () => {
+      const contador = itensCarrinho.reduce((total, item) => total + item.quantidade, 0);
+      setContador(contador);
+    }
+    useEffect(() => {
+      contadorCarrinho();
+      localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+    }, [itensCarrinho]);
+
+
   return (
     <carrinhoContext.Provider
       value={{
         itensCarrinho,
         valorTotal,
+        contador,
         adicionarItens,
         removerItens,
         removerUmItem,
         limparCarrinho,
         calcularValorTotal,
+        contadorCarrinho
       }}
     >
       {props.children}

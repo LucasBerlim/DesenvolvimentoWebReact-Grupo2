@@ -2,6 +2,9 @@ import styles from './Navbar.module.css'
 import { useNavigate } from "react-router-dom"
 import logo_nav from '../../assets/imglogoNav.png'
 import login from '../../assets/login.png'
+import carrinho from '../../assets/carrinho.png'
+import { carrinhoContext } from "../../context/carrinhoContext";
+import { useContext } from 'react'
 
 export function Navbar(){
 
@@ -9,11 +12,12 @@ export function Navbar(){
     const handleNavigation = (link) => {
         navigate("/" + link);
     }
+    const {contador} = useContext(carrinhoContext);
 
     return(
         <>
         <header className={styles.navHeader}>
-            <div id={styles.logoImg}>
+            <div id={styles.logoImg} onClick={()=>handleNavigation('')}>
                 <img src={logo_nav} alt="logo" />
             </div>
             <div className={styles.menuNav}>
@@ -23,7 +27,11 @@ export function Navbar(){
                 </ul>
             </div>
             <div id={styles.login}>
-                <div className={styles.loginImg}>
+                <div className={styles.divCarrinho}  onClick={()=>handleNavigation('carrinho')}>
+                    <img src={carrinho} alt="icone carrinho"/>
+                    <span className={styles.contador}>{contador}</span>
+                </div>
+                <div className={styles.loginImg} onClick={()=>handleNavigation('cadastro')}>
                     <img src={login} alt="icone login" />
                 </div>
                 <button className={styles.linkLogin} onClick={()=>handleNavigation('cadastro')}>Login</button>

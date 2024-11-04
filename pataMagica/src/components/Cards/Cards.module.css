@@ -25,6 +25,8 @@
 .cardTitulo{
     border-bottom: #B55040 solid 1px;
     padding: 1rem;
+    min-height: 104px;
+    box-sizing: border-box;
 }
 
 .cardDescricao{
@@ -34,8 +36,9 @@
 .cardPreco{
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 1rem 1.5rem 1rem;
     margin-top: auto;
+    box-sizing: border-box;
 }
 
 .cardBotao{
@@ -45,6 +48,8 @@
     border-radius: 1rem;
     border: none;
     box-shadow: 2px 2px 4px gray;
+    width: 10.25rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cardBotao:hover{
