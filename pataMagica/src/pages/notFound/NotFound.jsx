@@ -9,9 +9,9 @@ export function NotFoundPage() {
     }
 
     return (
-        <>
+        <div className={styles.container}> 
             <h1>Erro 404: Not Found</h1>
-            <button onClick={() => handleNavigation('')}>Voltar à página inicial</button>
-        </>
+            <button class={styles.notFoundButton} onClick={() => handleNavigation('')}>Voltar à página inicial</button>
+        </div>
     )
 }
