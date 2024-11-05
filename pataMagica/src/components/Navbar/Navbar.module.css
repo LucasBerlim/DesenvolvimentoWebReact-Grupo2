@@ -23,10 +23,15 @@
 }
 
 #login{
-    display: flex;    
-    gap: 0.3rem;
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 1rem;
+}
+
+.divLogin{
+    display: flex;
+    gap:0.3rem;    
 }
 
 .loginImg{
@@ -71,7 +76,7 @@
 
 .divCarrinho{
     position: relative;    
-    margin-right: 1rem;
+    margin-right: 2rem;
     cursor: pointer;
 }
 
@@ -96,4 +101,10 @@
     text-align: center;
     box-sizing: border-box;
     padding: 0.7rem;
+}
+.boasVindas{    
+    position: absolute;
+    right: 16rem;
+    padding: 1rem;
+    font-weight: 600;
 }

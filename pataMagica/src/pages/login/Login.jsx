@@ -3,7 +3,8 @@ import styles from './Login.module.css'
 import { Label } from '../../components/Label/Label'
 import { useContext, useState } from 'react'
 import logo from '../../assets/dogheart.png'
-import { Navigate } from 'react-router-dom'
+import nomeLoja from '../../assets/pata.png'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/auth'
 
 export function LoginPage() {
@@ -12,6 +13,7 @@ export function LoginPage() {
     const [email, setEmail] = useState('');
     const [cpf, setCpf] = useState('');
     const [error, setError] = useState(false);  // Estado para exibir erros de autenticação
+    const navigate = useNavigate();
 
 
     const handleSignIn = async (e) => {
@@ -32,7 +34,12 @@ export function LoginPage() {
             <div className={styles.loginTitulo}><p>Login</p></div>
             <div className={styles.container}>
                 <form onSubmit={handleSignIn} className={styles.content}>
-                    <img src={logo} alt="Logo" />
+                    <div className={styles.logoGrande}>
+                        <img src={logo} alt="Logo" />
+                    </div>
+                    <div className={styles.nomeLoja}>
+                        <img src={nomeLoja} alt="Logo" />
+                    </div>
                     <div className={styles.divLogin}>
                         <Label label="Login:" tagInput="login" />
                         <Input
@@ -55,7 +62,8 @@ export function LoginPage() {
                     </div>
                     {error && <p className={styles.error}>Email ou CPF incorretos</p>}
                     <button type="submit">Entrar</button>
-                    <button type="button">Cadastrar</button>           
+                    <p>Não é cadastrado ainda?</p>
+                    <button onClick={() => navigate('/cadastro')}>Cadastre-se</button>           
                 </form>
             </div>
         </>

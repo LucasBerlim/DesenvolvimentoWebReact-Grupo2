@@ -1,9 +1,9 @@
 .container {
     background-color: #B55040;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 3rem;
     flex-wrap: wrap;
 }
 
