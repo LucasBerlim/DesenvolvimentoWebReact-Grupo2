@@ -75,3 +75,20 @@
 .info button:hover{
     font-weight: 600;
 }
+
+@media (max-width: 768px) {
+
+    .container {
+        justify-content: center;
+    }
+
+    .info {
+        align-items: center;
+    }
+   
+    .container div ul {
+        display: block;
+        height: auto;
+    }
+    
+}

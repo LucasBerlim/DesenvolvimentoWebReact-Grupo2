@@ -46,7 +46,7 @@ export function Footer() {
                 <button onClick={()=>handleNavigation('')}>Home</button>
                 <button onClick={()=>handleNavigation('sobre')}>Sobre</button>
             </div>
-            <div>
+            <div className={styles.containerTime}>
                 <ul>
                     {linkedin.map(pessoa => (
                         <li key={pessoa.nome}>
