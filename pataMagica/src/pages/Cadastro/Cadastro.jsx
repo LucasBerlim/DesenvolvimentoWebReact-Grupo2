@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Label } from '../../components/Label/Label'
 import { Input } from '../../components/Input/Input'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export function Cadastro(){
 
@@ -15,6 +16,7 @@ export function Cadastro(){
     const [cep, setCep] = useState('')
     const [numero, setNumero] = useState('')
     const [complemento, setComplemento] = useState('')
+    const navigate = useNavigate();
 
     const [address, setAddress] = useState({
         cidade: '',
@@ -67,6 +69,7 @@ export function Cadastro(){
             // const response = await api.post('/clientes', cliente)
             await api.post('/clientes', cliente)
             alert('Cliente cadastrado com sucesso!');
+            navigate('/login')
         } catch (error) {
            console.log(error)
            alert(
@@ -82,23 +85,27 @@ export function Cadastro(){
             <div className={styles.container}>
                 <form onSubmit={saveCliente} className={styles.content}>
                     <div className={styles.divNome}>
-                        <Label
-                        label={"Nome completo:"}
-                        tagInput={"nome"}/>
-                        <Input
-                        type={"text"} 
-                        placeholder={"Insira seu nome e sobrenome"} 
-                        value={nome} 
-                        onChange={(e) => setNome(e.target.value)}
-                        tagInput={"nome"}/>
-                        <Label
-                        label={"Data de nascimento:"}
-                        tagInput={"nome"}/>
-                        <Input
-                        type={"date"}
-                        value={dataNascimento} 
-                        onChange={(e) => setDataNascimento(e.target.value)}
-                        tagInput={"dataNascimento"}/>
+                        <div className={styles.nomeCompleto}>
+                            <Label
+                            label={"Nome completo:"}
+                            tagInput={"nome"}/>
+                            <Input
+                            type={"text"} 
+                            placeholder={"Insira seu nome e sobrenome"} 
+                            value={nome} 
+                            onChange={(e) => setNome(e.target.value)}
+                            tagInput={"nome"}/>
+                        </div>
+                        <div className={styles.dataNascimento}>
+                            <Label
+                            label={"Data de nascimento:"}
+                            tagInput={"nome"}/>
+                            <Input
+                            type={"date"}
+                            value={dataNascimento} 
+                            onChange={(e) => setDataNascimento(e.target.value)}
+                            tagInput={"dataNascimento"}/>
+                        </div>
                     </div>
 
                     <div className={styles.divEmail}>
