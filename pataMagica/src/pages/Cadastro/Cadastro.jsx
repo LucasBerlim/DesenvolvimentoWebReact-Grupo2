@@ -1,8 +1,9 @@
 import styles from './Cadastro.module.css'
 import { api } from "../../services/api"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Label } from '../../components/Label/Label'
 import { Input } from '../../components/Input/Input'
+import axios from 'axios'
 
 export function Cadastro(){
 
@@ -14,7 +15,37 @@ export function Cadastro(){
     const [cep, setCep] = useState('')
     const [numero, setNumero] = useState('')
     const [complemento, setComplemento] = useState('')
-    
+
+    const [address, setAddress] = useState({
+        cidade: '',
+        rua: '',
+        bairro: '',
+        uf: ''
+    });
+
+    useEffect(() => {
+        if (cep.length === 8) {
+            const fetchAddress = async () => {
+                try {
+                    const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+                    if (response.data.erro) {
+                        alert('CEP não encontrado!');
+                    } else {
+                        setAddress({
+                            cidade: response.data.localidade,
+                            rua: response.data.logradouro,
+                            bairro: response.data.bairro,
+                            uf: response.data.uf
+                        });
+                    }
+                } catch (error) {
+                    console.error('Erro ao buscar o CEP:', error);
+                    alert('Erro ao buscar o CEP.');
+                }
+            };
+            fetchAddress();
+        }
+    }, [cep]);
 
     const saveCliente = async (e) => {
         //o que veio do usuário será passado como parametro na chamada da função
@@ -111,7 +142,7 @@ export function Cadastro(){
                             tagInput={"endereco"}
                             type={"text"} 
                             placeholder={"Insira seu endereço"} 
-                            value={cep} 
+                            value={`${address.uf}, ${address.cidade}, ${address.bairro}, ${address.rua}`}
                             onChange={(e) => setCep(e.target.value)}/>
                         </div>
                         <div className={styles.numero}>
