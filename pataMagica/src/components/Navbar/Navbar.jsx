@@ -14,6 +14,7 @@ export function Navbar(){
     }
     const {contador} = useContext(carrinhoContext);
     const { signed, signOut, user } = useContext(AuthContext);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleLogout = () => {
         signOut();
@@ -21,13 +22,17 @@ export function Navbar(){
         alert("Conta desconectada com sucesso.")
     };
 
+    const alternaMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return(
         <>
         <header className={styles.navHeader}>
             <div id={styles.logoImg} onClick={()=>handleNavigation('')}>
                 <img src={logo_nav} alt="logo" />
-            </div>
-            <div className={styles.menuNav}>
+            </div>            
+            <div className={`${styles.menuNav} ${menuOpen ? styles.menuAberto : ""}`}>
                 <ul>
                     <li><button className={styles.linkMenu} onClick={()=>handleNavigation('')}>Home</button></li>
                     <li><button className={styles.linkMenu} onClick={()=>handleNavigation('sobre')}>Sobre</button></li>                    
@@ -55,6 +60,7 @@ export function Navbar(){
                         </div>
                     )}
             </div>
+            <button className={styles.hamburguer} onClick={alternaMenu}>&#9776;</button>
         </header>
         </>
     )
