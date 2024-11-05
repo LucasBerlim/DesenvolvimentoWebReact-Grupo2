@@ -5,14 +5,17 @@ export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
+    const [email, setEmail] = useState(null);
 
     useEffect(() => {
         const loadingStoreData = async () => {
             const storageUser = localStorage.getItem("@Auth:user");
             const storageToken = localStorage.getItem("@Auth:token");
+            const storageEmail = localStorage.getItem("@Auth:email")
     
-            if(storageUser && storageToken) {
+            if(storageUser && storageToken && storageEmail) {
                 setUser(JSON.parse(storageUser));
+                setEmail(JSON.parse(storageEmail));
                 api.defaults.headers.common["Authorization"] = `Bearer ${storageToken}`;
             }
         };
@@ -32,10 +35,12 @@ export const AuthProvider = ({children}) => {
             } 
             const { token, user } = response.data;            
             setUser(user);
+            setEmail(email);
             api.defaults.headers.common[
                 "Authorization"
             ] = `Bearer ${response.data.token}`;
             localStorage.setItem("@Auth:token", response.data.token);
+            localStorage.setItem("@Auth:email", JSON.stringify(email));
             localStorage.setItem("@Auth:user", JSON.stringify(user));
         } catch (error) {
             console.error("Erro ao fazer login.", error);
@@ -43,28 +48,19 @@ export const AuthProvider = ({children}) => {
         }
     };
 
-
-
-        // if(response.data.token){
-        //     setUser(response.data.user);
-        //     api.defaults.headers.common[
-        //         "Authorization"] = `Bearer ${response.data.token}`;
-        //         localStorage.setItem("@Auth:token", response.data.token);
-        //         localStorage.setItem("@Auth:user", JSON.stringify(response.data.user));
-        // } else {
-        //     alert(response.data.error);
-        // }
-
     const signOut = () => {
         setUser(null);
-        localStorage.removeItem("@Auth:user");
+        setEmail(null);
+        localStorage.removeItem("@Auth:email");
         localStorage.removeItem("@Auth:token");
+        localStorage.removeItem("@Auth:user");
     };
 
     return(
         <AuthContext.Provider value={{
             user,
-            signed: !!user, 
+            email,
+            signed: !!email, 
             signIn,
             signOut,
         }}>

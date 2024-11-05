@@ -4,7 +4,7 @@ import logo_nav from '../../assets/imglogoNav.png'
 import login from '../../assets/login.png'
 import carrinho from '../../assets/carrinho.png'
 import { carrinhoContext } from "../../context/carrinhoContext";
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../context/auth'
 
 export function Navbar(){
@@ -13,7 +13,7 @@ export function Navbar(){
         navigate("/" + link);
     }
     const {contador} = useContext(carrinhoContext);
-    const { signed, signOut } = useContext(AuthContext);
+    const { signed, signOut, user } = useContext(AuthContext);
 
     const handleLogout = () => {
         signOut();
@@ -39,14 +39,19 @@ export function Navbar(){
                     <span className={styles.contador}>{contador}</span>
                 </div>
                 {signed ? ( // Verifica se o usuário está autenticado
-                        <div>
-                            <img src={login} alt="icone login" onClick={handleLogout} />
-                            <button className={styles.linkLogin} onClick={handleLogout}>Logout</button>
-                        </div>
+                <div className={styles.divLogin}>
+                    {user && <span className={styles.boasVindas}> Boas vindas, {user}!</span>}
+                    <div className={styles.loginImg}>
+                        <img src={login} alt="icone login" onClick={handleLogout} />
+                    </div>
+                    <button className={styles.linkLogin} onClick={handleLogout}>Logout</button>
+                </div>
                     ) : (
-                        <div className={styles.loginImg} onClick={() => handleNavigation('login')}>
-                            <img src={login} alt="icone login" />
-                            <button>Login</button>
+                        <div className={styles.divLogin}>
+                            <div className={styles.loginImg}>
+                                <img src={login} alt="icone login" onClick={() => handleNavigation('login')}/>
+                            </div>
+                            <button className={styles.linkLogin} onClick={() => handleNavigation('login')}>Login</button>
                         </div>
                     )}
             </div>

@@ -16,13 +16,9 @@
     background-color: #F8F5F1;
     border-radius: 3rem 3rem;
     padding: 2.5rem;
-    width: 80vw;
+    width: 40vw;
     gap: 1rem;    
     margin: 3rem auto;  
-}
-
-.content img{
-    width: 40rem;
 }
 
 .loginTitulo{
@@ -40,5 +36,65 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    width: 74%;
+}
+
+.divLogin label, .divSenha label{
+    white-space: nowrap;
+}
+
+.divLogin input, .divSenha input{
     width: 100%;
+    box-sizing: border-box;
+}
+.divLogin label{
+    margin-right: 0.9rem;
+}
+
+.logoGrande{
+    max-width: 20rem ;
+    max-height: 13rem;
+    overflow: hidden;
+}
+
+.logoGrande img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(0%, -20%);
+    top: 50%;
+    left: 50%;
+}
+
+.nomeLoja{
+    max-width: 24rem ;
+    max-height: 6rem;
+    overflow: hidden;
+}
+.nomeLoja img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(0%, -41%);
+    top: 50%;
+    left: 50%;
+}
+
+.content button{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    background-color: #B55040;
+    color: #F8F5F1;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    border: none;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.content button:hover{
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: #CF683B;
+    padding: 0.5rem;
+    border-radius: 0.6rem;
 }
