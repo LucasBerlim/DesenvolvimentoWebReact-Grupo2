@@ -24,7 +24,7 @@ export const AuthProvider = ({children}) => {
     
     const signIn = async ({email, cpf}) => {
         try{
-            const response = await api.post("/clientes/login", {
+            const response = await api.post("/login", {
                 email,
                 cpf,
             });
