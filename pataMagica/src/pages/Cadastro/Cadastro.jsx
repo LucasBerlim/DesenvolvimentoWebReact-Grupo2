@@ -142,7 +142,7 @@ export function Cadastro(){
                             tagInput={"endereco"}
                             type={"text"} 
                             placeholder={"Insira seu endereço"} 
-                            value={`${address.uf}, ${address.cidade}, ${address.bairro}, ${address.rua}`}
+                            value={`${address.rua}, ${address.bairro}, ${address.cidade}, ${address.uf}`}
                             onChange={(e) => setCep(e.target.value)}/>
                         </div>
                         <div className={styles.numero}>
