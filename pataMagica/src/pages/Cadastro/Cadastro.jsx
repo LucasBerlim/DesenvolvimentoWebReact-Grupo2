@@ -33,8 +33,9 @@ export function Cadastro(){
             }
         }        
         try {
-           const response = await api.post('/clientes', cliente)
-           alert('Cliente cadastrado com sucesso!');
+            // const response = await api.post('/clientes', cliente)
+            await api.post('/clientes', cliente)
+            alert('Cliente cadastrado com sucesso!');
         } catch (error) {
            console.log(error)
            alert(
