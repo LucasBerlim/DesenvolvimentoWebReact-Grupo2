@@ -59,7 +59,7 @@ export function SobrePage() {
                     imgDesc={"Renan Ferreira"}
                     titulo={"Renan Ferreira"}
                     descricao={"Dev Full Stack"}
-                    handleClick={() => handleClick("https://github.com/RenanFerreira2004")}
+                    handleClick={() => handleClick("https://www.linkedin.com/in/renan-ferreira-5714412a6/")}
                     nomeBotao={"Linkedin"}
                     />  
        </div>
