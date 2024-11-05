@@ -98,3 +98,57 @@
     padding: 0.5rem;
     border-radius: 0.6rem;
 }
+
+@media only screen and (max-width: 768px){
+    .content { 
+        width: 80vw; padding: 1.5rem;
+        } 
+    .loginTitulo { 
+        font-size: 2.5rem;
+}
+    
+}
+
+@media only screen and (max-width: 425px) { 
+    .container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+    .content { 
+    width: 90vw;
+    align-items: center; 
+    padding: 1rem;
+    margin: 2rem auto;
+    } 
+    
+    .loginTitulo { 
+    font-size: 1.5rem;
+    } 
+    
+    .divLogin,
+    .divSenha { 
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    } 
+    
+    .divLogin label, 
+    .divSenha label { 
+    margin-right: 0; 
+    margin-bottom: 0.5rem;
+    } 
+    
+    .logoGrande { 
+    max-width: 15rem; 
+    } 
+    
+    .nomeLoja { 
+    max-width: 18rem; } 
+
+    .content button {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+    }
