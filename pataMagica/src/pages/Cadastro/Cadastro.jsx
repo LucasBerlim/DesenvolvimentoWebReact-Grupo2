@@ -1,8 +1,10 @@
 import styles from './Cadastro.module.css'
 import { api } from "../../services/api"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Label } from '../../components/Label/Label'
 import { Input } from '../../components/Input/Input'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export function Cadastro(){
 
@@ -14,7 +16,38 @@ export function Cadastro(){
     const [cep, setCep] = useState('')
     const [numero, setNumero] = useState('')
     const [complemento, setComplemento] = useState('')
-    
+    const navigate = useNavigate();
+
+    const [address, setAddress] = useState({
+        cidade: '',
+        rua: '',
+        bairro: '',
+        uf: ''
+    });
+
+    useEffect(() => {
+        if (cep.length === 8) {
+            const fetchAddress = async () => {
+                try {
+                    const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+                    if (response.data.erro) {
+                        alert('CEP não encontrado!');
+                    } else {
+                        setAddress({
+                            cidade: response.data.localidade,
+                            rua: response.data.logradouro,
+                            bairro: response.data.bairro,
+                            uf: response.data.uf
+                        });
+                    }
+                } catch (error) {
+                    console.error('Erro ao buscar o CEP:', error);
+                    alert('Erro ao buscar o CEP.');
+                }
+            };
+            fetchAddress();
+        }
+    }, [cep]);
 
     const saveCliente = async (e) => {
         //o que veio do usuário será passado como parametro na chamada da função
@@ -36,6 +69,7 @@ export function Cadastro(){
             // const response = await api.post('/clientes', cliente)
             await api.post('/clientes', cliente)
             alert('Cliente cadastrado com sucesso!');
+            navigate('/login')
         } catch (error) {
            console.log(error)
            alert(
@@ -51,23 +85,27 @@ export function Cadastro(){
             <div className={styles.container}>
                 <form onSubmit={saveCliente} className={styles.content}>
                     <div className={styles.divNome}>
-                        <Label
-                        label={"Nome completo:"}
-                        tagInput={"nome"}/>
-                        <Input
-                        type={"text"} 
-                        placeholder={"Insira seu nome e sobrenome"} 
-                        value={nome} 
-                        onChange={(e) => setNome(e.target.value)}
-                        tagInput={"nome"}/>
-                        <Label
-                        label={"Data de nascimento:"}
-                        tagInput={"nome"}/>
-                        <Input
-                        type={"date"}
-                        value={dataNascimento} 
-                        onChange={(e) => setDataNascimento(e.target.value)}
-                        tagInput={"dataNascimento"}/>
+                        <div className={styles.nomeCompleto}>
+                            <Label
+                            label={"Nome completo:"}
+                            tagInput={"nome"}/>
+                            <Input
+                            type={"text"} 
+                            placeholder={"Insira seu nome e sobrenome"} 
+                            value={nome} 
+                            onChange={(e) => setNome(e.target.value)}
+                            tagInput={"nome"}/>
+                        </div>
+                        <div className={styles.dataNascimento}>
+                            <Label
+                            label={"Data de nascimento:"}
+                            tagInput={"nome"}/>
+                            <Input
+                            type={"date"}
+                            value={dataNascimento} 
+                            onChange={(e) => setDataNascimento(e.target.value)}
+                            tagInput={"dataNascimento"}/>
+                        </div>
                     </div>
 
                     <div className={styles.divEmail}>
@@ -111,7 +149,7 @@ export function Cadastro(){
                             tagInput={"endereco"}
                             type={"text"} 
                             placeholder={"Insira seu endereço"} 
-                            value={cep} 
+                            value={`${address.rua}, ${address.bairro}, ${address.cidade}, ${address.uf}`}
                             onChange={(e) => setCep(e.target.value)}/>
                         </div>
                         <div className={styles.numero}>
