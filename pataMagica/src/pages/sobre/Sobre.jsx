@@ -32,7 +32,7 @@ export function SobrePage() {
                     imgDesc={"Fernanda"}
                     titulo={"Fernanda"}
                     descricao={"Dev Full Stack"}
-                    endereco={() => handleClick("https://www.linkedin.com/in/fernanda-canto/" )}
+                    handleClick={() => handleClick("https://www.linkedin.com/in/fernanda-canto/")}
                     nomeBotao={"Linkedin"}
                     />
 
@@ -41,7 +41,7 @@ export function SobrePage() {
                     imgDesc={"Eduarda Pinho"}
                     titulo={"Eduarda Pinho"}
                     descricao={"Dev Full Stack"}
-                    endereco={() => handleClick("https://www.linkedin.com/in/eduarda-pinho-064b44330/")}
+                    handleClick={() => handleClick("https://www.linkedin.com/in/eduarda-pinho-064b44330/")}
                     nomeBotao={"Linkedin"}
                     />
 
@@ -50,7 +50,7 @@ export function SobrePage() {
                     imgDesc={"Brenda Barbatti"}
                     titulo={"Brenda Barbatti"}
                     descricao={"Dev Full Stack"}
-                    endereco={() => handleClick("https://www.linkedin.com/in/brenda-chaves-barbatti-947a91168/")}
+                    handleClick={() => handleClick("https://www.linkedin.com/in/brenda-chaves-barbatti-947a91168/")}
                     nomeBotao={"Linkedin"}
                     />  
 
@@ -59,7 +59,7 @@ export function SobrePage() {
                     imgDesc={"Renan Ferreira"}
                     titulo={"Renan Ferreira"}
                     descricao={"Dev Full Stack"}
-                    endereco={() => handleClick("https://github.com/RenanFerreira2004")}
+                    handleClick={() => handleClick("https://github.com/RenanFerreira2004")}
                     nomeBotao={"Linkedin"}
                     />  
        </div>
