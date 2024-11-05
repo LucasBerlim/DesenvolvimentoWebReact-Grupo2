@@ -14,27 +14,28 @@ export function Cadastro(){
     const [cep, setCep] = useState('')
     const [numero, setNumero] = useState('')
     const [complemento, setComplemento] = useState('')
+    
 
-    let cliente = {
-        email: email,
-        nomeCompleto: nome,
-        cpf: cpf,
-        telefone: telefone,
-        dataNascimento: dataNascimento,
-        endereco: {
-            cep: cep,
-            numero: numero,
-            complemento: complemento
-        }
-    }
-
-    const saveCliente = async (cliente) => {
+    const saveCliente = async (e) => {
         //o que veio do usuário será passado como parametro na chamada da função
         // no lugar do objeto podem ser passados tambem as variáveis
-          
+        e.preventDefault();
+        const cliente = {
+            email: email,
+            nomeCompleto: nome,
+            cpf: cpf,
+            telefone: telefone,
+            dataNascimento: dataNascimento,
+            endereco: {
+                cep: cep,
+                numero: numero,
+                complemento: complemento
+            }
+        }        
         try {
-           await api.post('/clientes', cliente)
-           alert('Cliente cadastrado com sucesso!');
+            // const response = await api.post('/clientes', cliente)
+            await api.post('/clientes', cliente)
+            alert('Cliente cadastrado com sucesso!');
         } catch (error) {
            console.log(error)
            alert(
@@ -48,7 +49,7 @@ export function Cadastro(){
         <>
             <div className={styles.cadastroTitulo}><p>Cadastro</p></div>
             <div className={styles.container}>
-                <div className={styles.content}>
+                <form onSubmit={saveCliente} className={styles.content}>
                     <div className={styles.divNome}>
                         <Label
                         label={"Nome completo:"}
@@ -155,8 +156,8 @@ export function Cadastro(){
                         <Input
                         type={"password"} 
                         placeholder={"Insira sua senha"} 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={cpf} 
+                        onChange={(e) => setCpf(e.target.value)}
                         tagInput={"senha"}/>
 
                         <Label
@@ -165,14 +166,14 @@ export function Cadastro(){
                         <Input
                         type={"password"} 
                         placeholder={"Repita sua senha"} 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={cpf} 
+                        onChange={(e) => setCpf(e.target.value)}
                         tagInput={"confirmacao"}/>                
                     </div>
                     <div className={styles.divBotao}>
-                        <button onClick={() => saveCliente(cliente)}>Cadastrar</button>
+                        <button type="submit">Cadastrar</button>
                     </div>
-                </div>
+                </form>
             </div>
             
         </>

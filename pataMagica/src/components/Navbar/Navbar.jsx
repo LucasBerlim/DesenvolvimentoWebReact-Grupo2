@@ -5,14 +5,21 @@ import login from '../../assets/login.png'
 import carrinho from '../../assets/carrinho.png'
 import { carrinhoContext } from "../../context/carrinhoContext";
 import { useContext } from 'react'
+import { AuthContext } from '../../context/auth'
 
 export function Navbar(){
-
     const navigate = useNavigate();
     const handleNavigation = (link) => {
         navigate("/" + link);
     }
     const {contador} = useContext(carrinhoContext);
+    const { signed, signOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        signOut();
+        handleNavigation('');
+        alert("Conta desconectada com sucesso.")
+    };
 
     return(
         <>
@@ -31,10 +38,17 @@ export function Navbar(){
                     <img src={carrinho} alt="icone carrinho"/>
                     <span className={styles.contador}>{contador}</span>
                 </div>
-                <div className={styles.loginImg} onClick={()=>handleNavigation('cadastro')}>
-                    <img src={login} alt="icone login" />
-                </div>
-                <button className={styles.linkLogin} onClick={()=>handleNavigation('cadastro')}>Login</button>
+                {signed ? ( // Verifica se o usuário está autenticado
+                        <div>
+                            <img src={login} alt="icone login" onClick={handleLogout} />
+                            <button className={styles.linkLogin} onClick={handleLogout}>Logout</button>
+                        </div>
+                    ) : (
+                        <div className={styles.loginImg} onClick={() => handleNavigation('login')}>
+                            <img src={login} alt="icone login" />
+                            <button>Login</button>
+                        </div>
+                    )}
             </div>
         </header>
         </>

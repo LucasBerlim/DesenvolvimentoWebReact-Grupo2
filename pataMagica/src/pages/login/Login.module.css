@@ -1,24 +1,44 @@
 .container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    min-height: 100vh;
+    color: #B55040;
+}
 
-    gap:2rem;
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
     border: #B55040 solid 1px;
     background-color: #F8F5F1;
-    border-radius: 3rem;
-    padding: 3.5rem;
+    border-radius: 3rem 3rem;
+    padding: 2.5rem;
     width: 80vw;
+    gap: 1rem;    
+    margin: 3rem auto;  
+}
+
+.content img{
+    width: 40rem;
 }
 
 .loginTitulo{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-    border: #B55040 solid 1px;
-    background-color: #F8F5F1;
-    border-radius: 3rem;
-    padding: 3.5rem;
-    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    color: #F8F5F1 ;
+    background-color: #B55040;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.divLogin, .divSenha {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
 }
