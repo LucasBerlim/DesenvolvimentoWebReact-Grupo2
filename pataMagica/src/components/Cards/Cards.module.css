@@ -56,3 +56,9 @@
     background-color: #CF683B;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 768px) {
+    .cardContainer {
+      width: 100%;
+    }
+  }

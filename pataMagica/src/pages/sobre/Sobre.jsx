@@ -35,7 +35,7 @@ export function SobrePage() {
           imagem={"src/assets/nanda02.png"}
           imgDesc={"Fernanda"}
           titulo={"Fernanda Canto"}
-          descricao={"Dev Full Stack"}
+          descricao={"Dev de hábitos noturnos, adora um desafio e sempre dá um jeito de fazer acontecer. Ama front e back-end."}
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/fernanda-canto/")
           }

@@ -12,3 +12,10 @@
     background-size: calc(25%);
     min-height: 100vh;
   }
+
+  @media only screen and (max-width: 425px) {
+
+    body{
+      background-size: calc(90%);
+    }
+  }

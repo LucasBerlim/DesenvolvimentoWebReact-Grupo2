@@ -1,7 +1,7 @@
 .navHeader{
     display: flex;
     box-sizing: border-box;
-    width: 100%;
+    min-width: 100%;
     background-color: #F8F5F1;
     justify-content: space-between;
     align-items: center;
@@ -107,4 +107,96 @@
     right: 16rem;
     padding: 1rem;
     font-weight: 600;
+}
+
+.hamburguer{
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .navHeader{
+        padding: 0.7rem;
+        height: 5.5rem;
+        box-sizing: border-box;
+    }
+    #logoImg{
+        width: 6rem;
+        height: 4rem;
+        overflow: hidden;
+    }
+
+    #logoImg img{
+        height: auto;
+        width: 20rem;
+        object-fit: cover;
+        transform: translate(0%, -9%);
+        top:50%;
+        left:50%;
+    }
+
+    .hamburguer{
+        display: block;
+        left: 0px;
+        z-index: 1;
+        color: #B55040;
+        font-size: 2rem;
+    }
+
+    .menuNav{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top:1rem;
+        background-color: #F8F5F1;
+        border: #B55040 solid 1px;
+        border-radius: 1rem;
+    }
+
+    .menuNav ul{
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem;
+    }
+
+    .menuNav.menuAberto{
+        display: flex;
+    }
+
+    .linkLogin{
+        font-size: 0.7rem;
+    }
+
+    .divLogin{
+        flex-direction: column;
+        gap:0;
+    }
+  
+    .loginImg{
+        border-radius: 1rem;
+        border:#B55040 1px solid;
+        height: 2rem;
+        width: 2rem;
+    }
+    .loginImg img{
+        height: 1.2rem;
+    }
+
+    .divCarrinho{
+        position: relative;    
+        margin-right: 1rem;
+        cursor: pointer;
+        margin-right: 4rem;
+    }
+    
+    .divCarrinho img{
+        height: 2.5rem;
+    }
+    
+    .boasVindas{
+        display: none;
+    }
 }
