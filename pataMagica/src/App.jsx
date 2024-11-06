@@ -1,5 +1,5 @@
 import "./App.css";
-import { Rotas } from "./Routes/Routes";
+import { Rotas } from "./routes/Routes";
 import { AuthProvider } from "./context/auth";
 import { CarrinhoProvider } from "./context/carrinhoContext";
 
