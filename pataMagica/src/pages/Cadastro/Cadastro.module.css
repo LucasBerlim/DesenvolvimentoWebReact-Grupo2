@@ -155,4 +155,13 @@
         gap: 0.5rem;
         width: 100%;
     }
+
+    .endereco, .nomeCompleto, .numero, .dataNascimento{
+        max-width: 100%;
+    }
+
+    .divBotao {
+        display: flex;
+        justify-content: center;
+    }
 }
