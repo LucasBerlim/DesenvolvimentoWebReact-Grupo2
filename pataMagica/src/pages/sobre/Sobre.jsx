@@ -52,7 +52,8 @@ export function SobrePage() {
           imagem={"src/assets/Duda.png"}
           imgDesc={"Eduarda Pinho"}
           titulo={"Eduarda Pinho"}
-          descricao={"Dev Full Stack"}
+          descricao={"Especialista em escuta ativa, alcanço soluções com empatia e curiosidade. Navego por todas as áreas da programação, tentando identificar oportunidades. Minha abordagem colaborativa e a busca pelo conhecimento me permitem superar desafios."
+          }
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/eduarda-pinho-064b44330/")
           }
