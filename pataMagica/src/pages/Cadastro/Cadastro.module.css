@@ -14,9 +14,9 @@
     border: #B55040 solid 1px;
     background-color: #F8F5F1;
     border-radius: 3rem;
-    width: 55vw;
+    width: 60vw;
     height: 100%;
-    padding: 2.5rem;  
+    padding: 2rem;  
     margin: 3rem auto;  
 }
 
@@ -64,8 +64,8 @@
 }
 
 .nomeCompleto{
-    width: 63%;
-    max-width: 63%;
+    width: 57%;
+    max-width: 57%;
 }
 
 .nomeCompleto input{
@@ -143,16 +143,30 @@
     .divNome,
     .divEmail,
     .divEndereco,
-    .endereco,
     .divTelefone,
-    .divSenha,
-    .numero,
-    .nomeCompleto,
-    .dataNascimento {
+    .divSenha, .endereco, .nomeCompleto, .numero, .dataNascimento{
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         width: 100%;
     }
+    .endereco, .nomeCompleto, .numero, .dataNascimento{
+        max-width: 100%;
+    }
+    .divBotao{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1350px) {
+    .divNome label,
+.divEmail label,
+.divTelefone label,
+.divSenha label,
+.endereco label,
+.numero label {
+    white-space: inherit;
+}
 }
