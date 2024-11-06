@@ -13,7 +13,9 @@ export function SobrePage() {
           imagem={"src/assets/berlim.png"}
           imgDesc={"Lucas Berlim"}
           titulo={"Lucas Berlim"}
-          descricao={"Foi conquistado pelo Back-end mas também gosta de explorar e ver os resultados da interface do usuário no Front-end! Sempre disposto a cumprir projetos."}
+          descricao={
+            "Foi conquistado pelo Back-end mas também gosta de explorar e ver os resultados da interface do usuário no Front-end! Sempre disposto a cumprir projetos."
+          }
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/lucas-berlim-705136265/")
           }
@@ -24,7 +26,9 @@ export function SobrePage() {
           imagem={"src/assets/michele.png"}
           imgDesc={"Miclele"}
           titulo={"Michele Moreira"}
-          descricao={"Dev Full Stack"}
+          descricao={
+            "Escolheu a maternidade e a programação como meio de viver, me apaixonei por back-end. Pareço frágil, mas não se engane, resiliência é meu sobrenome. Aqui missão dada é missão cumprida!"
+          }
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/michelemoreira-s/")
           }
@@ -35,7 +39,9 @@ export function SobrePage() {
           imagem={"src/assets/nanda02.png"}
           imgDesc={"Fernanda"}
           titulo={"Fernanda Canto"}
-          descricao={"Dev de hábitos noturnos, adora um desafio e sempre dá um jeito de fazer acontecer. Ama front e back-end."}
+          descricao={
+            "Dev de hábitos noturnos, adora um desafio e sempre dá um jeito de fazer acontecer. Ama front e back-end."
+          }
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/fernanda-canto/")
           }
@@ -46,7 +52,8 @@ export function SobrePage() {
           imagem={"src/assets/Duda.png"}
           imgDesc={"Eduarda Pinho"}
           titulo={"Eduarda Pinho"}
-          descricao={"Dev Full Stack"}
+          descricao={"Especialista em escuta ativa, alcanço soluções com empatia e curiosidade. Navego por todas as áreas da programação, tentando identificar oportunidades. Minha abordagem colaborativa e a busca pelo conhecimento me permitem superar desafios."
+          }
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/eduarda-pinho-064b44330/")
           }
