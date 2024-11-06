@@ -50,8 +50,6 @@ export function Cadastro(){
     }, [cep]);
 
     const saveCliente = async (e) => {
-        //o que veio do usuário será passado como parametro na chamada da função
-        // no lugar do objeto podem ser passados tambem as variáveis
         e.preventDefault();
         const cliente = {
             email: email,
@@ -66,7 +64,6 @@ export function Cadastro(){
             }
         }        
         try {
-            // const response = await api.post('/clientes', cliente)
             await api.post('/clientes', cliente)
             alert('Cliente cadastrado com sucesso!');
             navigate('/login')
