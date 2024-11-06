@@ -24,7 +24,7 @@ export function SobrePage() {
 
         <Cards
           imagem={"src/assets/michele.png"}
-          imgDesc={"Miclele"}
+          imgDesc={"Michele"}
           titulo={"Michele Moreira"}
           descricao={
             "Escolheu a maternidade e a programação como meio de viver, me apaixonei por back-end. Pareço frágil, mas não se engane, resiliência é meu sobrenome. Aqui missão dada é missão cumprida!"
@@ -52,7 +52,8 @@ export function SobrePage() {
           imagem={"src/assets/Duda.png"}
           imgDesc={"Eduarda Pinho"}
           titulo={"Eduarda Pinho"}
-          descricao={"Especialista em escuta ativa, alcanço soluções com empatia e curiosidade. Navego por todas as áreas da programação, tentando identificar oportunidades. Minha abordagem colaborativa e a busca pelo conhecimento me permitem superar desafios."
+          descricao={
+            "Especialista em escuta ativa, alcanço soluções com empatia e curiosidade. Navego por todas as áreas da programação, tentando identificar oportunidades. Minha abordagem colaborativa e a busca pelo conhecimento me permitem superar desafios."
           }
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/eduarda-pinho-064b44330/")
@@ -64,7 +65,9 @@ export function SobrePage() {
           imagem={"src/assets/brenda.png"}
           imgDesc={"Brenda Barbatti"}
           titulo={"Brenda Barbatti"}
-          descricao={"Dev Full Stack em formação, curtindo front, flertando com back-end e pensando em QA Disposta a aprender novas tecnologias e área da TI"}
+          descricao={
+            "Dev Full Stack em formação, curtindo front, flertando com back-end e pensando em QA Disposta a aprender novas tecnologias e área da TI"
+          }
           handleClick={() =>
             handleClick(
               "https://www.linkedin.com/in/brenda-chaves-barbatti-947a91168/"
