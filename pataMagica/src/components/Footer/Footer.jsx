@@ -40,7 +40,7 @@ export function Footer() {
                 <p>Pata Mágica - All rights reserved</p>
                 <p>Endereço: Rua Exemplo, 123</p>
                 <p>Telefone: (21) 1234-5678</p>
-                <p>Email: contato@lojavirtual.com</p>
+                <p>Email: lojapetpatamagica@gmail.com</p>
             </div>
             <div className={styles.info}>
                 <button onClick={()=>handleNavigation('')}>Home</button>
