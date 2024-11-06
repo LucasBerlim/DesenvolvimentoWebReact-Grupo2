@@ -22,7 +22,7 @@ export function Footer() {
     },
     {
       nome: "Renan Ferreira",
-      link: "#",
+      link: "https://www.linkedin.com/in/renan-ferreira-5714412a6/",
     },
     {
       nome: "Brenda Barbatti",
