@@ -63,7 +63,7 @@ export function SobrePage() {
           imagem={"src/assets/brenda.png"}
           imgDesc={"Brenda Barbatti"}
           titulo={"Brenda Barbatti"}
-          descricao={"Dev Full Stack"}
+          descricao={"Dev Full Stack em formação, curtindo front, flertando com back-end e pensando em QA Disposta a aprender novas tecnologias e área da TI"}
           handleClick={() =>
             handleClick(
               "https://www.linkedin.com/in/brenda-chaves-barbatti-947a91168/"
