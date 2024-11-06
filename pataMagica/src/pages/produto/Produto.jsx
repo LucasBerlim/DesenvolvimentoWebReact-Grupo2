@@ -1,8 +1,8 @@
 import styles from './Produto.module.css'
 import { Cards } from '../../components/Cards/Cards'
-import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { carrinhoContext } from '../../context/carrinhoContext';
+import { api } from '../../services/api';
 
 export function ProdutoPage() {
 
@@ -14,7 +14,7 @@ export function ProdutoPage() {
     const getProducts = async () => {
         try {
             
-            const response = await axios.get("http://localhost:8080/produtos");            
+            const response = await api.get("/produtos");            
             setProducts(response.data);
         } catch (err) {
             setError(err.message);
@@ -26,6 +26,9 @@ export function ProdutoPage() {
     useEffect(() => {
         getProducts();
     }, []);
+
+    loading && <p>Loading...</p>
+    error && <p>Error: {error}</p>
 
     return (
         <>

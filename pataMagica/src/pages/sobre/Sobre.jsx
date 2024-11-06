@@ -13,7 +13,7 @@ export function SobrePage() {
           imagem={"src/assets/berlim.png"}
           imgDesc={"Lucas Berlim"}
           titulo={"Lucas Berlim"}
-          descricao={"Dev Full Stack"}
+          descricao={"Foi conquistado pelo Back-end mas também gosta de explorar e ver os resultados da interface do usuário no Front-end! Sempre disposto a cumprir projetos."}
           handleClick={() =>
             handleClick("https://www.linkedin.com/in/lucas-berlim-705136265/")
           }
